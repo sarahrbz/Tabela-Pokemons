@@ -3,7 +3,7 @@ export interface Pokemon{
   name: string,
   height: number,
   weight: number,
-  sprites: {
+  sprites: { //imagem
     front_default: string
   }
 }

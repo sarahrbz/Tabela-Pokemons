@@ -10,7 +10,7 @@ import { Component, computed, OnInit, signal } from '@angular/core';
   styleUrl: './pokemon-component.css',
 })
 export class PokemonComponent implements OnInit{
-  pokemons = signal<Pokemon[]>([]);
+  pokemons = signal<Pokemon[]>([]); // todos os pokemons serão guardados aqui
 
   paginaAtual = signal(1);
   itensPorPagina = 10;
@@ -22,7 +22,7 @@ export class PokemonComponent implements OnInit{
     return this.pokemons().slice(inicio, fim);
   });
 
-  constructor(private service: PokemonService) {}
+  constructor(private service: PokemonService) {} //injetando o serviço getpokemons()
 
   ngOnInit(): void {
     this.service.getPokemons().subscribe(
